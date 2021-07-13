@@ -284,7 +284,7 @@ jQuery.fn.extend({
 
     const move = function(){
       $("html,body").scrollTop(0);
-      head.find("[name='accela-separator']").nextAll().remove();
+      head.find("[name='accela-separator']").nextAll(":not(.accela-css)").remove();
       head.append(page.head.html());
       ACCELA.change_page_content(body, page_content);
       body.attr("data-page-path", page.path);

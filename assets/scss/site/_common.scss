@@ -1,0 +1,44 @@
+html {
+	-webkit-text-size-adjust: none;
+  font-family: sans-serif;
+  color: #555555;
+}
+
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+.wrap-all {
+  position: relative;
+  font-feature-settings: "palt";
+  letter-spacing: 0.05em;
+  z-index: 1;
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  min-height: calc(100vh - 160px);
+}
+
+.lower {
+  padding-top: 80px;
+
+  .page-title {
+    text-align: center;
+    color: #b82b22;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    line-height: 120px;
+  }
+}
