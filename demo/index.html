@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>quocca works - Demo Site</title>
+<link rel="stylesheet" type="text/css" href="assets/css/demo.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HWP8CDJP5R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HWP8CDJP5R');
+</script>
+</head>
+
+<body>
+<div id="responsive-demo">
+  <header class="page-header">
+    <div class="wrap">
+      <h1>quocca</h1>
+
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#settings">Settings</a></li>
+          <li><a href="#features">Features</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-image">
+    <p>Main Visual</p>
+  </div>
+
+  <div class="contents wrap">
+    <section id="about" class="about">
+      <h2>About</h2>
+
+      <p>このページは、レスポンシブの挙動やサイトを構成するパーツの仕様を決定するために作られたデモサイトです。PCで、ブラウザの幅を変えてみて挙動を確認・共有するために作りました。下の設定を変更すると、このページの仕様が動的に変更されます。</p>
+    </section>
+
+    <section id="settings" class="settings">
+      <h2>Settings</h2>
+
+      <section>
+        <h3>ヘッダ</h3>
+
+        <label>
+          <input type="checkbox" name="header-type" value="2">
+          <span>画面上部に固定して、スクロールに追従させる</span>
+        </label>
+      </section>
+
+      <section>
+        <h3>メインビジュアルの高さ</h3>
+
+        <label>
+          <input type="radio" name="main-image-type" value="1" checked>
+          <span>固定する (主に上下がトリミングされる)</span>
+        </label>
+
+        <label>
+          <input type="radio" name="main-image-type" value="2">
+          <span>横幅に合わせて拡大・縮小する (画像が全て表示される)</span>
+        </label>
+
+        <label>
+          <input type="radio" name="main-image-type" value="3">
+          <span>ブラウザの高さに合わせる (上下、もしくは左右がトリミングされる。100vh)</span>
+        </label>
+      </section>
+
+      <section class="responsive">
+        <h3>スマートフォン <br class="sp">(〜750px)</h3>
+
+        <label>
+          <input type="radio" name="sp-responsive-type" value="1" checked>
+          <span>端末の横幅に合わせてコンテンツも拡大・縮小する <span>※ vwやremによる実装</span></span>
+        </label>
+
+        <label>
+          <input type="radio" name="sp-responsive-type" value="2">
+          <span>文字や余白などの数値を固定にする (改行位置などは端末ごとに変わる) <span>※ pxによる実装</span></span>
+        </label>
+      </section>
+
+      <section class="responsive">
+        <h3>タブレット <br class="sp">(751px〜1040px)</h3>
+
+        <label>
+          <input type="radio" name="tb-responsive-type" value="1" checked>
+          <span>実装せず、PC版+スクロールバーとする (実際の端末はviewportを固定する想定)</span>
+        </label>
+
+        <label>
+          <input type="radio" name="tb-responsive-type" value="2">
+          <span>SP版を拡大して表示する <span>※ SPの仕様に合わせる</span></span>
+        </label>
+
+        <label>
+          <input type="radio" name="tb-responsive-type" value="3">
+          <span>PC版を縮小して表示する <span>※ vwやremによる実装</span>
+        </label>
+
+        <p>※ タブレット用のレイアウトを用意するケースが多数かと思いますが、このデモには含めていません。</p>
+      </section>
+
+      <section class="responsive">
+        <h3>PC <br class="sp">(1041px〜)</h3>
+
+        <label>
+          <input type="radio" name="pc-responsive-type" value="1" checked>
+          <span>通常の実装 <span>※ pxによる実装</span></span>
+        </label>
+
+        <label>
+          <input type="radio" name="pc-responsive-type" value="2">
+          <span>ブラウザの横幅に合わせてコンテンツも拡大・縮小する <span>※ vwやremによる実装</span></span>
+        </label>
+      </section>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Features</h2>
+
+      <p>このセクションは<strong>レイアウト確認用</strong>です。PC版では3カラムですが、SP版では1カラムに変更されます。画像とテキストの量によってもバランスは変わるので、よく考えて仕様を決めましょう。特に運用中に文章量が大きく変わるページなどでは、デザインデータだけではイメージしづらいことがあります。このテキストは水増しです。</p>
+
+      <ul>
+        <li>
+          <img src="assets/img/demo/feature1.jpg" alt="">
+          <p>デザインデータだけでは伝わらないことがあります。様々な環境に対応したデザインを心がけましょう。</p>
+        </li>
+        <li>
+          <img src="assets/img/demo/feature2.jpg" alt="">
+          <p>レスポンシブWebデザインは、端末によって表示が変わることを考慮する必要があります。</p>
+        </li>
+        <li>
+          <img src="assets/img/demo/feature3.jpg" alt="">
+          <p>動物の動画を視聴することで、ストレスや不安の軽減につながる可能性があるという研究結果があります。</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="credits">
+      <h2>Credit</h2>
+
+      <p>このページで使われている画像は、<a href="https://www.pakutaso.com" title="フリー写真素材ぱくたそ" target="_blank">フリー写真素材ぱくたそ</a>様の素材を利用しています。</p>
+      <p><a href="https://www.pakutaso.com" title="フリー写真素材ぱくたそ" target="_blank"><img src="assets/img/demo/pakutaso_logo2018.png" alt="フリー写真素材ぱくたそ"></a></p>
+    </section>
+  </div>
+
+  <footer class="page-footer">
+    <div class="wrap">
+      <p class="social-link"><a href="https://twitter.com/quoccaworks" target="_blank"><img src="assets/img/demo/twitter-icon.svg" alt="twitter"> @quoccaworks</a></p>
+    </div>
+  </footer>
+</div>
+
+<script src="assets/js/demo/jquery.min.js"></script>
+<script src="assets/js/demo/script.js"></script>
+</body>
+</html>

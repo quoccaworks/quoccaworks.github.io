@@ -1,0 +1,392 @@
+@use "../base/responsive" as r;
+@use "../base/shortcut-functions" as f;
+
+@mixin sp-responsive-type1() {
+  // [SP版] vwを使った実装
+  // #responsive-demo[data-sp-responsive-type="1"] {
+  width: 100%;
+  min-width: 0;
+  padding-top: f.sp(50);
+
+  .wrap {
+    max-width: 100%;
+    padding: f.sp(0 30);
+  }
+
+  p {
+    font-size: f.sp(34);
+    line-height: f.sp(56);
+
+    + p {
+      margin-top: f.sp(56);
+    }
+  }
+
+  .page-header {
+    height: f.sp(100);
+
+    .wrap {
+      height: f.sp(100);
+    }
+
+    h1 {
+      top: f.sp(20);
+      left: f.sp(20);
+      height: f.sp(60);
+      padding: f.sp(0 30);
+      font-size: f.sp(40);
+      line-height: f.sp(60);
+    }
+
+    nav {
+      right: f.sp(20);
+
+      ul {
+        gap: f.sp(0 30);
+
+        li {
+          font-size: f.sp(24);
+          line-height: f.sp(100);
+        }
+      }
+    }
+  }
+
+  .main-image {
+    p {
+      padding: f.sp(0 30);
+      font-size: f.sp(40);
+      line-height: f.sp(80);
+    }
+  }
+
+  // 高さ固定
+  &[data-main-image-type='1'] .main-image {
+    height: f.sp(500);
+  }
+
+  // 高さ100vh
+  &[data-main-image-type='3'] .main-image {
+    height: calc(100vh - #{f.sp(80)});
+  }
+
+
+  .contents {
+    > section {
+      padding: f.sp(100 0);
+
+      h2 {
+        margin: f.sp(0 0 60);
+        font-size: f.sp(50);
+        line-height: f.sp(80);
+
+        &::before {
+          top: f.sp(90);
+          left: calc(50% - #{f.sp(20)});
+          width: f.sp(40);
+          height: 1px;
+        }
+      }
+    }
+
+    .about {
+      max-width: 100%;
+    }
+
+    .settings {
+      section {
+        margin: f.sp(40 0 0);
+        padding: f.sp(30);
+        border-radius: f.sp(10);
+
+        h3 {
+          margin: f.sp(0 0 40);
+          padding: f.sp(0 0 20);
+          border-bottom: 1px solid #fff;
+          font-size: f.sp(30);
+          line-height: f.sp(45);
+        }
+
+        label {
+          font-size: f.sp(24);
+          line-height: f.sp(40);
+
+          + label {
+            margin-top: f.sp(40);
+          }
+
+          input {
+            top: f.sp(8);
+          }
+
+          span span {
+            margin-left: f.sp(10);
+            font-size: 0.8em;
+          }
+        }
+
+        p {
+          margin-top: f.sp(40);
+          font-size: f.sp(24);
+          line-height: f.sp(40);
+        }
+      }
+    }
+
+    .features {
+      ul {
+        display: block;
+        margin: 0;
+        gap: 0;
+
+        li {
+          margin: f.sp(80 0 0);
+          img {
+            width: 100%;
+          }
+
+          p {
+            margin: f.sp(30 0 0);
+            font-size: f.sp(30);
+            line-height: f.sp(50);
+          }
+        }
+      }
+    }
+
+    .credits {
+      text-align: center;
+
+      p {
+        font-size: f.sp(30);
+        line-height: f.sp(50);
+      }
+
+      p a img {
+        width: 90%;
+        max-width: 100%;
+        margin: f.sp(30 0 0);
+      }
+    }
+  }
+
+  .page-footer {
+    margin: f.sp(100 0 0);
+    padding: f.sp(0 0 100);
+
+    .social-link {
+      a {
+        img {
+          width: f.sp(50);
+          vertical-align: f.sp(-10);
+        }
+      }
+    }
+  }
+}
+
+@mixin sp-responsive-type2() {
+  // [SP版] px実装
+  // #responsive-demo[data-sp-responsive-type="2"] {
+  min-width: 0;
+  padding-top: 80px;
+
+  .wrap {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 30px;
+
+    + p {
+      margin-top: 30px;
+    }
+  }
+
+  .page-header {
+    height: 80px;
+
+    .wrap {
+      height: 80px;
+    }
+
+    h1 {
+      top: 20px;
+      left: 20px;
+      height: 40px;
+      padding: 0 15px;
+      font-size: 30px;
+      line-height: 40px;
+    }
+
+    nav {
+      right: 20px;
+
+      ul {
+        gap: 0 30px;
+
+        li {
+          line-height: 80px;
+        }
+      }
+    }
+  }
+
+  .main-image {
+    p {
+      padding: 0 30px;
+      font-size: 30px;
+      line-height: 60px;
+    }
+  }
+
+  // 高さ固定
+  &[data-main-image-type='1'] .main-image {
+    height: 400px;
+  }
+
+  // 高さ100vh
+  &[data-main-image-type='3'] .main-image {
+    height: calc(100vh - 80px);
+  }
+
+
+  .contents {
+    > section {
+      padding: 60px 0;
+
+      h2 {
+        position: relative;
+        margin: 0 0 50px;
+        text-align: center;
+        color: #000;
+        font-size: 30px;
+        line-height: 40px;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50px;
+          left: calc(50% - 20px);
+          width: 40px;
+          height: 1px;
+          background-color: #000;
+        }
+      }
+    }
+
+    .about {
+      max-width: 100%;
+    }
+
+    .settings {
+      section {
+        margin: 40px 0 0;
+        padding: 20px;
+        border-radius: 10px;
+
+        h3 {
+          margin: 0 0 30px;
+          padding: 0 0 20px;
+          border-bottom: 1px solid #fff;
+          color: #fff;
+          font-size: 20px;
+          line-height: 30px;
+        }
+
+        label {
+          display: block;
+          position: relative;
+          padding: 0 0 0 30px;
+          color: #fff;
+          font-size: 16px;
+          line-height: 28px;
+          cursor: pointer;
+
+          + label {
+            margin-top: 20px;
+          }
+
+          input {
+            position: absolute;
+            top: 6px;
+            left: 0;
+          }
+
+          span span {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 0.8em;
+          }
+        }
+
+        p {
+          margin-top: 30px;
+          color: #ddd;
+          font-size: 16px;
+          line-height: 28px;
+        }
+      }
+    }
+
+    .features {
+      ul {
+        display: block;
+        gap: 0 30px;
+
+        li {
+          margin: 40px 0 0;
+
+          p {
+            margin: 20px 0 0;
+            font-size: 18px;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+
+    .credits {
+      text-align: center;
+
+      p {
+        font-size: 18px;
+
+        br {
+          display: none;
+        }
+      }
+
+      p a img {
+        width: 300px;
+      }
+    }
+  }
+
+  .page-footer {
+    margin: 100px 0 0;
+    padding: 0 0 100px;
+    overflow: hidden;
+
+    .social-link {
+      a {
+        img {
+          vertical-align: -8px;
+        }
+      }
+    }
+  }
+}
+
+
+@include r.mq(sp) {
+  #responsive-demo[data-sp-responsive-type="1"] {
+    @include sp-responsive-type1();
+  }
+
+  #responsive-demo[data-sp-responsive-type="2"] {
+    @include sp-responsive-type2();
+  }
+}

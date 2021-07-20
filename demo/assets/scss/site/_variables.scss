@@ -1,0 +1,15 @@
+// コンテンツの基本サイズ
+// 各ブレイクポイントのmax-widthを定義
+$break-points: (
+  sp:  750,
+  tb: 1040,
+  pc: null
+) !default;
+
+
+// vw変換時の基準のwidthを定義(デザインデータの横幅など)
+$base-widths: (
+  sp: 750,
+  pc: 1040,
+  large: 1600
+) !default;

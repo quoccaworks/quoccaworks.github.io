@@ -1,0 +1,24 @@
+@use "../base/responsive" as r;
+@use "../base/shortcut-functions" as f;
+@use "./top" as pc;
+@use "./top-sp" as sp;
+
+@include r.mq(tb) {
+  #responsive-demo[data-sp-responsive-type="1"][data-tb-responsive-type="2"] {
+    @include sp.sp-responsive-type1();
+  }
+
+  #responsive-demo[data-sp-responsive-type="2"][data-tb-responsive-type="2"] {
+    @include sp.sp-responsive-type2();
+  }
+
+  #responsive-demo[data-tb-responsive-type="3"] {
+    min-width: 0;
+
+    .wrap {
+      max-width: 100%;
+    }
+
+    @include pc.pc-responsive-type2();
+  }
+}
